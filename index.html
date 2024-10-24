@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/1/1.0.0/iconify.min.js"></script>
+</head>
+<body>
+    <audio id="encounterMusic" src="sounds/gamestartSound.mp3" preload="auto"></audio>
+    <div id="game">
+        <div id="titleWrapper">
+            <h1 id="gameTitle">Who's that Pokémon?</h1>
+            <button id="rulesButton" onclick="openRulesModal()">?</button>
+            <button id="muteButton">
+                <span class="iconify" data-icon="mdi:volume-high"></span>
+            </button>
+        </div>
+        <div class="who-that-pokemon">
+            <span id="questionMark" class="text">?</span>
+            <div class="silhouette">
+                <div id="pokemonSilhouette"></div>
+            </div>
+        </div>
+        <div id="guessTracker">Guesses Remaining: 6</div>
+        <div style="position: relative;"> 
+            <input type="text" id="guessInput" placeholder="Enter Pokémon name..." autocomplete="off">
+            <div id="suggestions" class="suggestion-box"></div>
+        </div>
+        <div id="feedback-section">
+        </div>
+        <div id="debugInfo" style="display:none;"></div>
+        <audio id="winSound" src="sounds/winSound.mp3" preload="auto"></audio>
+        <audio id="lossSound" src="sounds/lossSound.mp3" preload="auto"></audio>
+        <div id="gameOverPopup" class="popup" style="display:none;">
+            <div id="correctPokemonInfo"></div>
+            <button id="playAgainButton">Play Again</button> 
+        </div>
+    </div>
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>HOW TO PLAY</h2>
+            <p>When the game starts, a silhouette of a pokemon will be given and you have six guesses to correctly guess it. After each incorrect guess, the stats of the pokemon guessed will appear and the closeness to the target Pokemon's stats will be given. </p>
+            <p>Feedback will be given on the following stats: types of the pokemon, base HP, base attack, base defense, height, weight, generation, and evolution stage.</p>
+            <p>For stats (except types), green is correct, yellow is within 15%, and red is further than that.</p>
+            <p>For types, green is fully correct, orange is close, and red is none of the types.</p>
+            <p>If the correct pokemon is not correctly guessed after the six attempts, the game is over and the Pokemon will be revealed. Feel free to replay as much as you want!</p>
+            <p>All Pokemon data is sourced from Poke API. Not associated with the Pokemon brand or Nintendo.</p>
+        </div>
+    </div>
+
+    <script src="squirdle.js"></script>
+</body>
+</html>
