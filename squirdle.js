@@ -570,6 +570,5 @@ muteButton.addEventListener('click', () => {
         encounterMusic.pause(); // Pause encounter music
     } else {
         muteButton.innerHTML = `<span class="iconify" data-icon="mdi:volume-high"></span>`; // Unmuted icon
-        encounterMusic.play(); // Play encounter music if it was playing
     }
 });
