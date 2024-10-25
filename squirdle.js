@@ -411,6 +411,11 @@ const capitalizeFirstLetter = (string) => {
 };
 
 const gameOver = (isWin) => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Optional for a smooth scrolling effect
+    });
+
     // Show the game over popup
     const gameOverPopup = document.getElementById("gameOverPopup");
     gameOverPopup.style.display = "block";
